@@ -1,0 +1,110 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+void  turn_on_vehicle();
+void  turn_off_vehicle();
+void quit();
+void system_state();
+
+char input;
+char engine_status=1; //initial condition for engine=on
+char quit_system=0;  //initial condition for system=on
+
+
+
+
+int main(void) {
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
+	//ask the user about the action he wants to do
+	printf("a. Turn on the vehicle engine\n");
+	printf("b. Turn off the vehicle engine\n");
+	printf("c. Quit the system\n");
+	scanf(" %c",&input);
+	switch(input)
+	{
+	case 'a':
+		turn_on_vehicle();
+		break;
+	case 'b':
+		turn_off_vehicle();
+		break;
+	case 'c':
+		quit();
+		break;
+	default:
+		printf("invalid input \n");
+
+	}
+	if(!engine_status) //if the engine is off
+	{
+		//ask the user about the action he wants to do
+		printf("a. Turn on the vehicle engine\n");
+		printf("b. Turn off the vehicle engine\n");
+		printf("c. Quit the system\n");
+		scanf(" %c",&input);
+		switch(input)
+		{
+		case 'a':
+			turn_on_vehicle();
+			break;
+		case 'b':
+			turn_off_vehicle();
+			break;
+		case 'c':
+			quit();
+			break;
+		default:
+			printf("invalid input \n");
+		}
+	}
+
+	system_state();
+
+
+
+
+	return 0;
+}
+
+void  turn_on_vehicle()//function to turn on the engine
+{
+	engine_status=1;
+
+}
+void  turn_off_vehicle()//function to turn off the engine
+{
+	engine_status=0;
+}
+void quit()// function to quit system
+{
+	quit_system=1;
+}
+
+void system_state()
+{
+	if(engine_status==1)
+		{
+			printf("the vehicle is on \n");
+		}
+		else
+		{
+			printf("the vehicle is off \n");
+
+		}
+		if(quit_system==1)
+		{
+			printf("the system is off \n");
+
+		}
+		else
+		{
+			printf("the system is on \n");
+
+		}
+
+
+}
+
+
+

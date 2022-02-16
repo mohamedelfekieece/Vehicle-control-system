@@ -1,0 +1,41 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+char input;
+char engine_status=0; //ini
+
+
+
+
+
+int main(void) {
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
+	//ask the user about the action he wants to do
+	printf("a. Turn on the vehicle engine\n");
+	printf("b. Turn off the vehicle engine\n");
+	printf("c. Quit the system\n");
+	scanf(" %c",&input);
+	switch(input)
+	{
+	case 'a'
+    turn_on_vehicle();
+	break;
+
+
+	}
+
+
+
+
+
+
+	return 0;
+}
+
+void  turn_on_vehicle()
+{
+
+
+}
